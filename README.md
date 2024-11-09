@@ -76,6 +76,8 @@ This project is part of a Hack This Fall hackathon submission. The objective of 
 
 Feel free to explore the application and contribute your stories, feedback, or features!
 
+![images](https://github.com/user-attachments/assets/3faa92d2-eb45-41e0-ac02-cd29c06ff326)
+
 ## Contributing 🤝
 
 If you'd like to contribute to the project, please follow these steps:
