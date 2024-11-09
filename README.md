@@ -1,5 +1,4 @@
 
-# Tale_Trail
 
 # Tale Trail 🌍📖
 
