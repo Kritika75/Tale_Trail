@@ -16,8 +16,8 @@
         <nav class="navbar">
             <div class="logo">TaleTrail</div>
             <ul class="nav-links">
-                <li><a href="{% url 'landingpage' %}">Home</a></li>
-                <li><a href="{% url 'index' %}">Explore Stories</a></li>
+                <li><a href="{% url 'landingpage' %}" class="home">Home</a></li>
+                <li><a href="{% url 'index' %}" class="explore-stories">Explore Stories</a></li>
                 
                 {% if request.session.user %}
                 <li><a href="{% url 'submit_story' %}">Submit a Story</a></li>

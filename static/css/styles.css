@@ -19,8 +19,8 @@ body {
     margin-right: 20px;
 }
 
-.explore-button, .login-btn, .logout-btn, .submit-btn {
-    background-color: #FFAAA7;
+.login-btn {
+    background-color: #FFF8E1;
     border: none;
     padding: 10px 20px;
     color: white;
@@ -99,6 +99,24 @@ body {
     width: 100%;
     max-width: 400px; /* Optional: Limit width */
 }
+
+.home{
+    color: #FFF8E1; 
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.explore-stories{
+    color: #FFF8E1; /* Adjusted to match your color scheme */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+
 /* General Container */
 .landing-container {
     max-width: 800px;
