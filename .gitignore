@@ -1,0 +1,63 @@
+# Python-related
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.db
+*.sqlite3
+*.log
+
+# Django-related
+/local_legends/settings.py  # Ignore settings file if it contains sensitive data such as API keys and SECRET_KEY
+/local_legends/wsgi.py
+/local_legends/asgi.py
+/local_legends/migrations/
+/local_legends/.env
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+
+# Firebase-related
+firebase.json
+firebase-debug.log
+static/js/firebaseConfig.js  # Ignore Firebase credentials file
+
+# Auth0 / API keys
+.env  # Ignore environment files if they hold sensitive keys
+*.env
+
+# Static files and media
+/static/
+media/
+
+# MacOS and IDE-specific files (if any)
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Log and temporary files
+*.log
+*.bak
+*.swp
+
+# Ignore database files
+*.sqlite3
+db.sqlite3
+
+# Ignore test coverage reports (if any)
+coverage/
+*.coveragerc
+
+# Ignore any other private config files we don't want to commit
+config.json
+
+# Ignore generated files (if any)
+*.tgz
+*.tar.gz
+*.zip
+*.rar
