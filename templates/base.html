@@ -18,8 +18,12 @@
             <ul class="nav-links">
                 <li><a href="{% url 'landingpage' %}">Home</a></li>
                 <li><a href="{% url 'index' %}">Explore Stories</a></li>
+<<<<<<< HEAD
                 
                 {% if request.session.user %}
+=======
+                {% if user.is_authenticated %}
+>>>>>>> f0ebb6acec0883884a19b8e78175fe4976b4e18c
                 <li><a href="{% url 'submit_story' %}">Submit a Story</a></li>
                 <li>
                     <form class="logout-btn" action="{% url 'users:logout' %}" method="post">
