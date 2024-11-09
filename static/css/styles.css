@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #E6F7FF;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #A7FFD4;
+    padding: 1rem;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.explore-button, .login-btn, .logout-btn, .submit-btn {
+    background-color: #FFAAA7;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.map-container {
+    padding: 2rem;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.search-bar {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+/* Style for the map container */
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#map {
+    height: 500px; /* Set a fixed height for the map */
+    width: 100%;   /* Ensure it takes up full width */
+    margin: 20px auto;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+/* Style for the story list */
+.story-list {
+    width: 80%;
+    max-width: 600px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.story-list h3 {
+    margin-top: 0;
+}
+
+#story-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#story-list li {
+    margin-bottom: 10px;
+}
+
+#story-list a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+#story-list a:hover {
+    text-decoration: underline;
+}
+
+.search-bar {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px; /* Optional: Limit width */
+}

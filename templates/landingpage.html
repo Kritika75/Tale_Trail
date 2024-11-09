@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="landing-container">
+    <h1>Welcome to Local Legends</h1>
+    <p>Discover the mysteries, myths, and stories that make each place unique.</p>
+    <div class="features">
+        <div class="feature-item">
+            <h2>Explore the Map</h2>
+            <p>Navigate through the map to uncover hidden stories in each location.</p>
+        </div>
+        <div class="feature-item">
+            <h2>Share Your Story</h2>
+            <p>Contribute your tales and help build a living tapestry of culture and lore.</p>
+        </div>
+        <div class="feature-item">
+            <h2>Connect and Discuss</h2>
+            <p>Comment, ask questions, and engage with others who share a passion for legends.</p>
+        </div>
+    </div>
+    <a href="{% url 'index' %}" class="explore-button">Start Exploring</a>
+</div>
+{% endblock %}
