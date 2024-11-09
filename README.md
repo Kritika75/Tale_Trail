@@ -55,6 +55,7 @@
 Create a .env file in the root of the project with your Firebase and Auth0 credentials (if you’re using them).
 
 Example .env file:
+
     ```makefile
     SECRET_KEY=your-django-secret-key
     AUTH0_CLIENT_ID=your-auth0-client-id
