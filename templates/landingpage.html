@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="landing-container">
+    <h1>Welcome to TaleTrail</h1>
+    <p class="intro-text">Uncover the mysteries, myths, and stories that make each place unique.</p>
+
+    <div class="features">
+        <div class="feature-item">
+            <h2>🌍 Explore the Map</h2>
+            <p>Navigate our interactive map to uncover hidden stories in each region. Adventure awaits in every corner!</p>
+        </div>
+        
+        <div class="feature-item">
+            <h2>✍️ Share Your Story</h2>
+            <p>Contribute your own tales to help build a living tapestry of culture, history, and lore. Every story matters.</p>
+        </div>
+        
+        <div class="feature-item">
+            <h2>💬 Connect and Discuss</h2>
+            <p>Join our community! Engage in discussions, ask questions, and share your passion for legends with others.</p>
+        </div>
+    </div>
+    
+    <a href="{% url 'index' %}" class="explore-button">Start Exploring</a>
+</div>
+{% endblock %}

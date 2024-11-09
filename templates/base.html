@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaleTrail Story Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">TaleTrail</div>
+            <ul class="nav-links">
+                <li><a href="{% url 'landingpage' %}">Home</a></li>
+                <li><a href="{% url 'index' %}">Explore Stories</a></li>
+                
+                {% if request.session.user %}
+                <li><a href="{% url 'submit_story' %}">Submit a Story</a></li>
+                <li>
+                    <form class="logout-btn" action="{% url 'users:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button class="logout-btn">Logout</button>
+                    </form>
+                </li>
+                {% else %}
+                <li>
+                    <form action="{% url 'users:login' %}" method="get">
+                        <button class="login-btn">Login</button>
+                    </form>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    <div class="map-container">
+        <h2>Discover Stories on the Map</h2>
+        <input type="text" class="search-bar" id="search-bar" placeholder="Search stories...">
+        <div id="map"></div>
+    </div>
+    {% endblock %}
+
+    <footer>
+        <p>&copy; 2024 TaleTrail Story Map. Discover the world’s myths & legends.</p>
+    </footer>
+
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+
+    <!-- Firebase Config -->
+    <script src="{% static 'js/firebaseConfig.js' %}"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Custom JS -->
+    <script src="{% static 'js/firebaseConfig.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
