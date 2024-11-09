@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # Tale_Trail
-=======
+
 # Tale Trail 🌍📖
 
 **Tale Trail** is a web application that allows users to explore and discover captivating stories connected to specific locations around the world. The app highlights legendary tales, mysteries, and myths, offering users a journey into the heart of folklore from various cultures.
