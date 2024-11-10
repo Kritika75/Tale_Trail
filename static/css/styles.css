@@ -1,5 +1,5 @@
 body {
-    background-image: url('/images/map.webp');
+    background-image: url('/static/images/map.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
