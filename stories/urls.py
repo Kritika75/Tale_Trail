@@ -10,6 +10,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('<int:id>', views.story_details, name='story-details'),
     path('submit/', views.submit_story, name='submit_story'),  # Matches {% url 'submit_story' 
-    path('<int:id>/add_comment/', views.add_comment, name = 'add_comment')
+    path('<int:id>/add_comment/', views.add_comment, name = 'add_comment'),
+    path('api/stories/', views.get_stories, name='get_stories')
 ]
 
