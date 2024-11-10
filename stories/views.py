@@ -5,6 +5,7 @@ from .serializers import StorySerializer
 from rest_framework.permissions import AllowAny
 from django.views.decorators.http import require_POST
 from django.utils import timezone
+from django.http import JsonResponse
 
 # Create your views here.
 class StoryViewSet(viewsets.ModelViewSet):
@@ -24,6 +25,19 @@ def story_details(request, id):
    }
    return render(request, 'story_deets.html',  context)
 
+def get_stories(request):
+    stories = Story.objects.all()
+    stories_data = [
+        {
+            "title": story.title,
+            "content": story.content,
+            "latitude": float(story.latitude),
+            "longitude": float(story.longitude),
+        }
+        for story in stories
+    ]
+    return JsonResponse(stories_data, safe=False)
+ 
 @require_POST
 def add_comment(request, id):
   story = Story.objects.get(id = id)
