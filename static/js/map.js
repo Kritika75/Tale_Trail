@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     // Initialize the map and set the initial view
-    const map = L.map('map').setView([51.505, -0.09], 3);  // Set the initial view to a broader zoom level to fit all markers
+    const map = L.map('map').setView([51.505, -0.09], 3);  // Broad zoom level to fit all markers
 
     // Set the tile layer (OpenStreetMap)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Expanded stories with richer content
-    const stories = [
+    // Static sample stories with full descriptions
+    const sampleStories = [
         {
             title: "The Haunted Temple",
             content: "Deep in the mist-covered mountains of the Himalayas lies an ancient temple. For centuries, locals have whispered tales of strange occurrences — eerie voices echoing through the halls, flickering candle flames that seem to have a life of their own, and footsteps that echo even when no one is there. Many have ventured to explore its secrets, but few have returned. Some say the temple is guarded by spirits who protect an ancient treasure buried beneath its floors.",
@@ -36,10 +36,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // Loop through the stories array and add a marker for each story
-    stories.forEach(story => {
-        const marker = L.marker([story.latitude, story.longitude]).addTo(map)
+    // Function to add a story marker to the map
+    function addMarker(story) {
+        L.marker([story.latitude, story.longitude]).addTo(map)
             .bindPopup(`<b>${story.title}</b><br>${story.content}`);
-    });
-});
+    }
 
+    // Add sample stories to the map
+    sampleStories.forEach(addMarker);
+
+    // Fetch additional stories from the Django API and add them to the map
+    try {
+        const response = await fetch('/stories/api/stories/');
+        const apiStories = await response.json();
+        apiStories.forEach(addMarker);
+    } catch (error) {
+        console.error("Error fetching stories from the API:", error);
+    }
+});
