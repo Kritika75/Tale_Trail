@@ -13,14 +13,13 @@
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <a href="{% url 'landingpage' %}">
-                <img src="{% static 'images/weblogo.png' %}" alt="Logo" class="logo">
-            </a>
-            <span class="logo-title">TaleTrail</span>
-        </div>
         <nav class="navbar">
-            <div class="logo">TaleTrail</div>
+            <div class="logo-container">
+                <a href="{% url 'landingpage' %}">
+                    <img src="{% static 'images/weblogo.png' %}" alt="Logo" class="logo">
+                </a>
+                <span class="logo-title">TaleTrail</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="{% url 'landingpage' %}" class="home">Home</a></li>
                 <li><a href="{% url 'index' %}" class="explore-stories">Explore Stories</a></li>
