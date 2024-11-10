@@ -16,7 +16,7 @@
         <nav class="navbar">
             <div class="logo-container">
                 <a href="{% url 'landingpage' %}">
-                    <img src="{% static '/static/images/weblogo.png' %}" alt="Logo" class="logo">
+                    <img src="{% static '/images/weblogo.png' %}" alt="Logo" class="logo">
                 </a>
                 <span class="logo-title">TaleTrail</span>
             </div>
@@ -25,7 +25,11 @@
                 <li><a href="{% url 'index' %}" class="explore-stories">Explore Stories</a></li>
                 
                 {% if request.session.user %}
-                <li><a href="{% url 'submit_story' %}">Submit a Story</a></li>
+                <li>
+                    <form action="{% url 'submit_story' %}" method="get">
+                        <button class="submit-story-btn">Submit a Story</button>
+                    </form>
+                </li>
                 <li>
                     <form class="logout-btn" action="{% url 'users:logout' %}" method="post">
                         {% csrf_token %}
